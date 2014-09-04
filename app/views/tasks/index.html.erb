@@ -1,0 +1,11 @@
+<%= link_to "Create new", new_task_path %>
+
+<% @tasks.each do |task| %>
+  <div class="container">
+    <h3><%= task.name %></h3>
+    <h4><%= task.due_date.strftime("%m/%d/%Y") %></h4>
+    <p><%= task.description %>
+  </div>
+<% end %>
+
+<%= link_to "Create new", new_task_path %>
