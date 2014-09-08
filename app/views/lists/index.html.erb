@@ -1,0 +1,7 @@
+<% @lists.each do |list| %>
+	<div class="container">
+		<h3><%= list.name %></h3>
+		<p><%= list.description %></p>
+		<%= link_to "Show List", list %>
+	</div>
+<% end %>
