@@ -5,6 +5,6 @@ class ListsController < ApplicationController
 
 	def show
 		@list = List.find(params[:id])
-		@tasks = List.find(params[:id]).task
+		@tasks = Task.where listid: params[:id]
 	end
 end

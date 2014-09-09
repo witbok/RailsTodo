@@ -2,5 +2,15 @@
 	<h1><%= @list.name %></h1>
 	<p><%= @list.description %></p>
 
-	<%= @tasks.inspect %>
+	<ul>
+		<% @tasks.each do |task| %>
+			<li>
+					<h3><%= task.name %></h3>
+					<h4><%= task.due_date.strftime("%m/%d/%Y") %></h4>
+					<p><%= task.description %></p>
+			</li>
+		<% end %>
+	</ul>
+
+	<%= link_to "Create new task", new_task_path %>
 <div>

@@ -8,5 +8,7 @@
   <%= t.label :due_date %>
   <%= t.date_select :due_date %>
   <br>
+  <%= select_tag "task[listid]", options_from_collection_for_select(List.all, :id, :name) %>
+  <br>
   <%= t.submit "Create new task" %>
 <% end %>
