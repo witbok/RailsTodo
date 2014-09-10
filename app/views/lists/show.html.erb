@@ -1,18 +1,18 @@
-<h1><%= @list.name %></h1>
+<div class="page-header">
+  <h1><span class="glyphicon glyphicon-list"></span> <%= @list.name %></h1>
+</div>
+
 <p><%= @list.description %></p>
 
-<ul>
+<ul class="list-group">
 	<% @tasks.each do |task| %>
-		<li>
-				<h3><%= task.name %></h3>
-				<h4><%= task.due_date.strftime("%m/%d/%Y") %></h4>
+		<li class="list-group-item">
+				<h3 class="list-group-heading"><%= task.name %></h3>
+				<h4><span class="label label-primary"><%= task.due_date.strftime("%m/%d/%Y") %></span></h4>
 				<p><%= task.description %></p>
 		</li>
 	<% end %>
 </ul>
 
-<hr>
-
-<%= link_to "Create New Task", new_task_path %>
-<br>
-<%= link_to "Return to Lists", lists_path %>
+<%= link_to "Create New Task", new_task_path, { class: "btn btn-info" } %>
+<%= link_to "Return to Lists", lists_path, { class: "btn btn-warning" } %>

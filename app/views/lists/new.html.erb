@@ -1,9 +1,9 @@
-<%= form_for @list do |l| %>
-	<%= l.label :name %>
+<div class="page-header">
+  <h1><span class="glyphicon glyphicon-pencil"></span> New List</h1>
+</div>
+
+<%= bootstrap_form_for @list do |l| %>
 	<%= l.text_field :name %>
-	<br>
-	<%= l.label :description %>
 	<%= l.text_area :description %>
-	<br>
-	<%= l.submit "Create New List" %>
+	<%= l.submit "Create New List", {class: "btn btn-primary"} %>
 <% end %>
