@@ -1,7 +1,13 @@
-<% @lists.each do |list| %>
-	<div class="container">
+<h1>Task Lists</h1>
+<ul>
+	<% @lists.each do |list| %>
+	<li>
 		<h3><%= list.name %></h3>
 		<p><%= list.description %></p>
 		<%= link_to "Show List", list %>
-	</div>
+	</li>
 <% end %>
+</ul>
+
+<hr>
+<%= link_to "Create New List", new_list_path %>
